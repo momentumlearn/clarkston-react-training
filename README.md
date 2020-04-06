@@ -3,8 +3,8 @@
 - Introduction to JavaScript using modern ES6 syntax
 - Creating a React application using create-react-app
 - JSX syntax
-- Function-based React components and props
 - Class-based React components and state
+  - Decomposing components 
   - Updating state from child components
 - Function-based React components and props
 - The React component lifecycle
