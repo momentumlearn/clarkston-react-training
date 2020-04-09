@@ -6,13 +6,14 @@
 - Function-based React components and props
 - Class-based React components and state
   - Updating state from child components
-- React routing
+- Function-based React components and props
+- The React component lifecycle
+- Using Ajax with React
 
 ## Day 2
 
 - Review of day 1
-- The React component lifecycle
-- Using Ajax with React
+- React routing
 - React hooks
   - Basic hooks
   - Custom hooks
