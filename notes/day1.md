@@ -52,7 +52,9 @@ Explain JSX through the clicker app.
   - Functions pass up
   - Updating state from child components using prop drilling
      - https://kentcdodds.com/blog/prop-drilling
-- Using prop-types (https://www.npmjs.com/package/prop-types)
+- Using prop-types 
+  - https://www.npmjs.com/package/prop-types
+  - https://blog.logrocket.com/validating-react-component-props-with-prop-types-ef14b29963fc/
 
 ## Function-based React components
 
