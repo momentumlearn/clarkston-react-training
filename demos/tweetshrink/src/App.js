@@ -67,9 +67,11 @@ class App extends React.Component {
             />
           </div>
           <div className='w-50 pr2'>
-            <div className='bg-washed-yellow h4 pa2'>
-              {shrunkText}
-            </div>
+            <textarea
+              className='w-100 h4 pa2 bg-washed-yellow'
+              readOnly
+              value={shrunkText}
+            />
           </div>
         </div>
         <div className='flex pb3'>
