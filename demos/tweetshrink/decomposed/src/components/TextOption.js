@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 class TextOption extends React.Component {
   render () {
@@ -12,6 +13,14 @@ class TextOption extends React.Component {
       </div>
     )
   }
+}
+
+TextOption.propTypes = {
+  option: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired
+  }).isRequired,
+  setOption: PropTypes.func.isRequired
 }
 
 export default TextOption

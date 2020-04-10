@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 class TextEntry extends React.Component {
   render () {
@@ -33,6 +34,12 @@ class TextEntry extends React.Component {
       </div>
     )
   }
+}
+
+TextEntry.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  text: PropTypes.string.isRequired,
+  shrinkText: PropTypes.string
 }
 
 export default TextEntry
