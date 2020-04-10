@@ -1,0 +1,30 @@
+.App {
+  margin: 2rem auto;
+}
+
+.PatternSelector {
+  text-align: center;
+}
+
+.PatternSelector .thumbnail {
+  max-height: 200px;
+  vertical-align: middle;
+}
+
+.PatternSelector .arrow {
+  display: inline-block;
+  vertical-align: middle;
+  height: 200px;
+  overflow: hidden;
+}
+
+.PatternSelector .arrow a {
+  display: block;
+  cursor: pointer;
+  padding: 100px 1rem;  
+  color: black;  
+}
+
+.PatternSelector .arrow a:hover {
+  text-decoration: none;
+}
