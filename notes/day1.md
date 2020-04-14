@@ -28,6 +28,10 @@ Explain JSX through the clicker app.
 
 - Install the [React Developer Tools for Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) or the [React Dev Tools for Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
 
+## Exercise
+
+- Add a subtract button to clicker app
+
 ## Class-based React components and state
 
 - Walk through a monolithic version of the TweetShrink app
@@ -60,3 +64,7 @@ Using the patterns app
 
 - show how to use `componentDidMount` to retrieve data via Ajax
 - show how to use `componentDidUpdate` to redraw canvas
+
+## Exercise
+
+- Add price calculation to patterns app
