@@ -26,7 +26,7 @@ Explain JSX through the clicker app.
 
 ## React developer tools
 
-- Install the [React Developer Tools for Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) or the [React Dev Tools for Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+<!-- - Install the [React Developer Tools for Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) or the [React Dev Tools for Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/) -->
 
 ## Exercise
 

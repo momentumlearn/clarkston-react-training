@@ -1,0 +1,140 @@
+{
+  "patterns": [
+    {
+      "id": 1,
+      "name": "Autumn Pattern",
+      "image": "autumn_pattern_by_pronouncedyou-d59s2s5.jpg",
+      "tags": [
+        "nature"
+      ],
+      "ppi": "0.25"
+    },
+    {
+      "id": 2,
+      "name": "Bunny Garden",
+      "image": "bunny_garden_pattern_by_pronouncedyou-d59jb24.jpg",
+      "tags": [
+        "animals"
+      ],
+      "ppi": "0.25"
+    },
+    {
+      "id": 3,
+      "name": "Cat Lady",
+      "image": "cat_lady_pattern_by_pronouncedyou-d5afw1g.jpg",
+      "tags": [
+        "animals"
+      ],
+      "ppi": "0.45"
+    },
+    {
+      "id": 4,
+      "name": "Dino Dino",
+      "image": "dino_dino_pattern_by_pronouncedyou-d59o3ie.jpg",
+      "tags": [
+        "animals"
+      ],
+      "ppi": "0.40"
+    },
+    {
+      "id": 5,
+      "name": "Exotic Animals",
+      "image": "exotic_animal_pattern_by_pronouncedyou-d5bwqy3.jpg",
+      "tags": [
+        "animals"
+      ],
+      "ppi": "0.50"
+    },
+    {
+      "id": 6,
+      "name": "Forget Me Not",
+      "image": "forget_me_not_1_by_pajkabajka.png",
+      "tags": [
+        "nature"
+      ],
+      "ppi": "0.25"
+    },
+    {
+      "id": 7,
+      "name": "Ocean Friends",
+      "image": "ocean_friends_pattern_by_pronouncedyou-d5baaay.jpg",
+      "tags": [
+        "animals"
+      ],
+      "ppi": "0.27"
+    },
+    {
+      "id": 8,
+      "name": "Reptile Skin",
+      "image": "reptile_skin_by_hhh316-d4kqx26.jpg",
+      "tags": [
+        "animals",
+        "nature"
+      ],
+      "ppi": "0.42"
+    },
+    {
+      "id": 9,
+      "name": "Coffee Beans",
+      "image": "seamless_coffee_beans_texture_by_hhh316-d4gchxo.jpg",
+      "tags": [
+        "texture"
+      ],
+      "ppi": "0.15"
+    },
+    {
+      "id": 10,
+      "name": "Gold Coins",
+      "image": "seamless___gold_coins_by_bartalon-d35iydr.jpg",
+      "tags": [
+        "texture"
+      ],
+      "ppi": "0.20"
+    },
+    {
+      "id": 11,
+      "name": "Grass Patches",
+      "image": "tileable_classic_grass_patches_with_dirt_texture_by_hhh316-d5h5ahz.jpg",
+      "tags": [
+        "nature",
+        "texture"
+      ],
+      "ppi": "0.25"
+    },
+    {
+      "id": 12,
+      "name": "Fence Planks",
+      "image": "wood_dry_cracked_fence_plank_tree_bark_texture_by_hhh316-d7mgc68.jpg",
+      "tags": [
+        "texture"
+      ],
+      "ppi": "0.25"
+    }
+  ],
+  "sizes": [
+    {
+      "id": 1,
+      "name": "Test Swatch",
+      "dimensions": [
+        8,
+        8
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Fat Quarter",
+      "dimensions": [
+        21,
+        18
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Yard",
+      "dimensions": [
+        42,
+        36
+      ]
+    }
+  ]
+}

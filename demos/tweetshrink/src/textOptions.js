@@ -18,6 +18,11 @@ const textOptions = [
     id: 'oxford',
     label: 'Eliminate Oxford commas',
     fn: text => text.replace(/,\s+(and|&)\s+/, ' $1 ')
+  },
+  {
+    id: 'vowels',
+    label: 'Remove vowels',
+    fn: text => text.replace(/[aeiou]/g, '')
   }
 ]
 
