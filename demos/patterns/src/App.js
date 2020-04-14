@@ -4,7 +4,6 @@ import './App.css'
 import SizeSelector from './components/SizeSelector'
 import PatternSelector from './components/PatternSelector'
 import FabricDisplay from './components/FabricDisplay'
-import getJSON from './getJSON'
 
 class App extends React.Component {
   constructor () {

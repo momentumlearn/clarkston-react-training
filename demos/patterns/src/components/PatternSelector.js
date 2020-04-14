@@ -42,11 +42,11 @@ class PatternSelector extends React.Component {
     return (
       <div className='PatternSelector'>
         <div className='arrow left-arrow padded-click'>
-          <a onClick={(e) => this.shiftIndex(-1)}>&#9664;</a>
+          <a href='#' onClick={() => this.shiftIndex(-1)}>&#9664;</a>
         </div>
         <img className='thumbnail' alt={selectedPattern.name} src={`/img/patterns/${selectedPattern.image}`} />
         <div className='arrow right-arrow'>
-          <a onClick={(e) => this.shiftIndex(1)}>&#9654;</a>
+          <a href='#' onClick={() => this.shiftIndex(1)}>&#9654;</a>
         </div>
       </div>
     )

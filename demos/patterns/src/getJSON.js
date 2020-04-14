@@ -1,3 +1,5 @@
+/* globals fetch */
+
 const getJSON = (url) => {
   return fetch(url, {
     headers: { Accept: 'application/json' }
