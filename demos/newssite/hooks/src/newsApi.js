@@ -7,19 +7,26 @@ over that limit.
 import axios from 'axios'
 import lscache from 'lscache'
 
-const newsApiKey = process.env.REACT_APP_NEWS_API_KEY
-
 export const newsApi = axios.create({
   baseURL: 'https://newsapi.org/v2/'
 })
-newsApi.defaults.headers.common['X-Api-Key'] = newsApiKey
 
-const fetchSources = function () {
-  return newsApi.get('sources?country=us')
+const fetchSources = function (apiKey) {
+  return newsApi.get('sources?country=us', {
+    headers: { 'X-Api-Key': apiKey }
+  })
 }
 
-const fetchHeadlines = function () {
-  return newsApi.get('top-headlines?country=us')
+const fetchHeadlines = function (apiKey) {
+  return newsApi.get('top-headlines?country=us', {
+    headers: { 'X-Api-Key': apiKey }
+  })
+}
+
+const fetchSourceHeadlines = function (apiKey, ...sourceIds) {
+  return newsApi.get(`everything?sources=${sourceIds.join(',')}`, {
+    headers: { 'X-Api-Key': apiKey }
+  })
 }
 
 const getFromCacheOrFetch = function (key, fetchFn, expiration) {
@@ -37,23 +44,22 @@ const getFromCacheOrFetch = function (key, fetchFn, expiration) {
             reject(res.data)
           }
         })
+        .catch(err => reject(err))
     }
   })
 }
 
-export const getSources = function () {
-  const trustedSources = [
-    'the-washington-post',
-    'techcrunch',
-    'google-news',
-    'cnn',
-    'cbs-news',
-    'reuters'
-  ]
-
-  return getFromCacheOrFetch('newsSources', fetchSources, 10)
+export const getSources = function (apiKey) {
+  return getFromCacheOrFetch('newsSources', () => fetchSources(apiKey), 10)
 }
 
-export const getHeadlines = function () {
-  return getFromCacheOrFetch('newsHeadlines', fetchHeadlines, 5)
+export const getHeadlines = function (apiKey) {
+  return getFromCacheOrFetch('newsHeadlines', () => fetchHeadlines(apiKey), 5)
+}
+
+export const getSourceHeadlines = function (apiKey, ...sourceIds) {
+  return getFromCacheOrFetch(
+    `headlines-${sourceIds.join('-')}`,
+    () => fetchSourceHeadlines(apiKey, ...sourceIds),
+    5)
 }

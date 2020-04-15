@@ -1,37 +1,37 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-class NewsSources extends React.Component {
-  render () {
-    const { sources, onCheck } = this.props
-    const loading = !sources
+function NewsSources ({ activeSources, sources, onCheck }) {
+  const loading = !sources
 
-    if (loading) {
-      return (
-        <div style={{
-          textAlign: 'center'
-        }}
-        >
-          <span className='loader loader-xl' />
-        </div>
-      )
-    }
-
+  if (loading) {
     return (
-      <div className='NewsSources fixed vh-100 overflow-y-auto'>
-        <h2 className='f4 ma0 pb3'>Sources</h2>
-        {sources.map((source, idx) => (
-          <div className='source pv1' key={idx}>
-            <input
-              type='checkbox'
-              checked={source.active}
-              onChange={event => onCheck(source.id, event.target.checked)}
-            /> {` ${source.name} `}
-            <a target='_blank' rel='noopener noreferrer' href={source.url}>&#x2197;</a>
-          </div>
-        ))}
+      <div style={{
+        textAlign: 'center'
+      }}
+      >
+        <span className='loader loader-xl' />
       </div>
     )
   }
+
+  return (
+    <div className='NewsSources'>
+      <h2 className='f4 ma0 pb3'>Sources</h2>
+      <div className='flex flex-wrap'>
+        {sources.map((source, idx) => (
+          <div className='source pa2 w5' key={idx}>
+            <input
+              type='checkbox'
+              checked={activeSources.includes(source.id)}
+              onChange={event => onCheck(source.id, event.target.checked)}
+            /> {` ${source.name} `}
+            <Link to={`/sources/${source.id}/`}>&#x2197;</Link>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export default NewsSources

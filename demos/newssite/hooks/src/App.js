@@ -1,84 +1,40 @@
-import React, { useState, useEffect } from 'react'
-import update from 'immutability-helper'
-
+import React, { useState } from 'react'
+import { useLocalStorage } from './customHooks'
 import 'tachyons/css/tachyons.css'
-import { getSources, getHeadlines } from './newsApi'
-import NewsSources from './components/NewsSources'
-import NewsStories from './components/NewsStories'
-
-function useEffectOnMount (fn) {
-  return useEffect(fn, [])
-}
+import NewsSite from './components/NewsSite'
+import ApiKeyContext from './ApiKeyContext'
 
 function App () {
-  const [sources, setSources] = useState(null)
-  const [stories, setStories] = useState(null)
+  const [apiKey, setApiKey] = useLocalStorage('newsApiKey', null)
+  const [tokenField, setTokenField] = useState('')
 
-  useEffectOnMount(() => {
-    console.log('useEffectSources - get sources')
-    getSources()
-      .then((results) => {
-        const newSources = results.sources
-        newSources.forEach(source => {
-          source.active = true
-        })
+  if (!apiKey) {
+    return (
+      <div className='App sans-serif'>
+        <div className='mw8 center pa4'>
+          <p className='f4'>
+            This site requires a News API token to work. If you do not have one,
+            you can get a token at <a href='https://newsapi.org/'>News API</a>.
+          </p>
 
-        setSources(newSources)
-      })
-  })
-
-  useEffectOnMount(() => {
-    console.log('useEffectStories - get stories')
-    getHeadlines()
-      .then((results) => {
-        setStories(results.articles)
-      })
-  })
-
-  function activeSources () {
-    if (!sources) {
-      return null
-    }
-    return sources
-      .filter(source => source.active)
-      .map(source => source.id)
-  }
-
-  function storiesToShow () {
-    if (!stories) {
-      return null
-    }
-
-    const sources = activeSources()
-
-    return stories
-      .filter(story => {
-        return sources.includes(story.source.id)
-      })
-      .slice(0, 10)
-  }
-
-  function handleCheckSource (sourceId, active) {
-    const sourceIdx = sources.findIndex(source => source.id === sourceId)
-    setSources(update(sources, { [sourceIdx]: { active: { $set: active } } }))
+          <p>
+            <label className='db' htmlFor='token'>API Token</label>
+            <input
+              className='db' type='text' id='token'
+              value={tokenField}
+              onChange={(e) => setTokenField(e.target.value)}
+            />
+            <button onClick={() => setApiKey(tokenField)}>Store API Token</button>
+          </p>
+        </div>
+      </div>
+    )
   }
 
   return (
-    <div className='App sans-serif'>
-      <div className='mw9 center pa4'>
-        <div className='flex'>
-          <div className='w-third'>
-            <NewsSources
-              sources={sources}
-              onCheck={handleCheckSource}
-            />
-          </div>
-          <div className='w-two-thirds'>
-            <NewsStories stories={storiesToShow()} />
-          </div>
-        </div>
-      </div>
-    </div>
+    <ApiKeyContext.Provider value={[apiKey, setApiKey]}>
+      <NewsSite />
+    </ApiKeyContext.Provider>
   )
 }
 

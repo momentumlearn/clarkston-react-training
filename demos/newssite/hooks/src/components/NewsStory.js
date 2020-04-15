@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
+import { Link } from 'react-router-dom'
 
 function NewsStory ({ story }) {
   return (
@@ -10,7 +11,11 @@ function NewsStory ({ story }) {
       </h2>
       <div className='flex pb3'>
         <div className='w-50'>
-          {story.source.name}
+          {
+            story.source.id
+              ? <Link to={`/sources/${story.source.id}`}>{story.source.name}</Link>
+              : story.source.name
+          }
         </div>
         <div className='w-50 tr'>
           {moment(story.publishedAt).format('lll')}
