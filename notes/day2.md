@@ -3,16 +3,9 @@
 ## Review of React
 
 * Go over newssite
-
-## Routing with react-router
-
-* Demos
-  * When to use react-router?
-  * Creating routes and links to routes
-  * Demonstrate adding paging to newssite
-  * Demonstrate adding pages for individual sources for the newssite
 * Resources
-  * https://reacttraining.com/react-router/
+  * immutability-helper
+  * [Immer](https://immerjs.github.io/immer/docs/introduction)
 
 ## Hooks
 
@@ -25,6 +18,17 @@
   * https://reactjs.org/docs/hooks-intro.html
   * https://usehooks.com/
   * https://usehooks.com/useLocalStorage/
+
+
+## Routing with react-router
+
+* Demos
+  * When to use react-router?
+  * Creating routes and links to routes
+  * Demonstrate adding paging to newssite
+  * Demonstrate adding pages for individual sources for the newssite
+* Resources
+  * https://reacttraining.com/react-router/
 
 
 ## Context
